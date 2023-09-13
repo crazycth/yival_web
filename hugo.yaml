@@ -46,8 +46,8 @@ markup:
       xhtml: false
 
 params:
-  author: Nusser Studios
-  authorimage: ../assets/images/global/author.webp
+  author: YiVal
+  authorimage: ../assets/images/global/yival_author_img.jpeg
   og_image: /images/yival-spirit-flip.png
   moto: "⚡AI App - Evaluate and Evolve⚡"
   description: "YiVal is the enterprise-grade generative AI application development platform."
@@ -102,11 +102,10 @@ params:
   social_media:
     github:
       enabled: true
-      url: 'https://https://github.com/YiVal/YiVal'
+      url: 'https://github.com/YiVal/YiVal'
     twitter:
       enabled: true
       url: 'https://twitter.com/yivalloveaigc'
-    
 
 menu:
   main:
@@ -118,18 +117,18 @@ menu:
       name: Demo
       url: /demo/
       weight: 30
-    - identifier: News
-      name: News
-      url: /news/
-      weight: 10
+    # - identifier: News
+    #   name: News
+    #   url: /news/
+    #   weight: 10
     - identifier: Docs
       name: Docs
       url: "https://yival.github.io/YiVal/"      
       weight: 40
-    - identifier: Contact
-      name: Contact
-      url: "mailto:yivalloveaigc@gmail.com"
-      weight: 50
+    # - identifier: Contact
+    #   name: Contact
+    #   url: "mailto:yivalloveaigc@gmail.com"
+    #   weight: 50
     # - identifier: about
     #   name: About
     #   url: /about/
@@ -142,10 +141,10 @@ menu:
     #   pre: complexdropdown
     #   name: Dropdown
     #   weight: 40
-    # - identifier: contact
-    #   name: Contac
-    #   url: /contact/
-    #   weight: 50
+    - identifier: contact
+      name: Contact
+      url: /contact/
+      weight: 50
     # - identifier: posts
     #   name: posts
     #   url: /posts/
@@ -191,13 +190,14 @@ menu:
       name: demo
       url: /demo/
       weight: 30
-    - identifier: news
-      name: news
-      url: /news/
-      weight: 10
+    - identifier: docs
+      name: docs
+      url: "https://yival.github.io/YiVal/"
+      weight: 40
     - identifier: contact
       name: contact
       url: /contact/
+      weight: 50
     # - identifier: about
     #   name: About
     #   url: /about/
