@@ -4,83 +4,75 @@ date: 2023-10-05T11:10:36+08:00
 draft: false
 language: en
 featured_image: ../assets/images/featured/post-demo-featured.jpg
-summary: Use Yival, the open source AIGC framwork in action for cases like startup company headline generations and more.
+summary: Currently YiVal website is accessible via https://yival.netlify.app/ or  https://yival.io/. The source code is hosted on Github. To make changes to the website content, you can follow the steps below.
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, odio nec venenatis lacinia, lacus lectus varius nisi, in tristique mi purus ut libero. Vestibulum vel convallis felis. Ut finibus lorem vestibulum lobortis rhoncus.
-author: YiVal
+author: MaJunHao
 authorimage: ../assets/images/global/yival_author_img.jpeg
 categories: Blog
-tags: ["YiVal", "prompting"]
+tags: ["front-task", "prompting"]
 ---
 
-# Yival Tutorial
+# How to edit YiVal website
 
-We provide some easy-to-use demos for you to directly experience the effect
-of Yival in the README on Github.
+Currently YiVal website is accessible via https://yival.netlify.app/ or https://yival.io/. The source code is hosted on Github. To make changes to the website content, you can follow the steps below.
 
-## Startup Company Headline Generation 🤖
+1.  Clone the website source code to your local machine.
 
-<!-- google colab:[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EiWUL8rE_kfNLXVPowCWCh6hwHFagvs_?usp=sharing) -->
-
--   google colab: [headline_generation_colab](https://colab.research.google.com/drive/1EiWUL8rE_kfNLXVPowCWCh6hwHFagvs_?usp=sharing)
--   notebook : [headline_generation](./headline_generation.ipynb)
-
-The goal of this demo is to generate corresponding page headlines based on the
-names of startup companies. YiVal supports automatic generation of related prompts
-and test data according to this goal, and self-evaluation based on the configured
-evaluator. It provides different result selection methods such as AHP to confirm
-the final result.
-
-For how to confirm the prompt used by the generator, we recommend using a
-step-by-step optimization pipeline mode, continuously adjusting based on
-the test case results. We provide an example : [pipeline_prompt_generation](https://colab.research.google.com/drive/1tr5s_adAPmI9Mv6Zz97JnTGIh3mGojsi?usp=sharing)
-
-<!-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1tr5s_adAPmI9Mv6Zz97JnTGIh3mGojsi?usp=sharing) -->
-
-## Basic Demo
-
-### Basic Interactive Mode
-
-To get started with a demo for basic interactive mode of YiVal, run the following
-command:
-
-```shell
-yival demo --basic_interactive
+```Bash
+git clone https://github.com/crazycth/yival_web.git
 ```
 
-Once started, navigate to the following address in your web browser:
+2. Install the necessary environment on your local machine by running the command
 
-<http://127.0.0.1:8073/interactive>
-
-<details>
-  <summary>Click to view the screenshot</summary>
-  
-  ![Screenshot 2023-08-17 at 10 55 31 PM](https://github.com/YiVal/YiVal/assets/1544154/a720c3ad-1288-4830-8a3d-377d9827f46e)
-  
-</details>
-
-For more details on this demo, check out the [Basic Interactive Mode Demo](https://github.com/YiVal/YiVal/blob/master/docs/docs/basic_interactive_mode.md#demo).
-
-### Question Answering with expected result evaluator
-
-```shell
-yival demo --qa_expected_results
+```Bash
+brew install hugo
 ```
 
-Once started, navigate to the following address in your web browser:
-<http://127.0.0.1:8073/>
+3. Start the service at your local machine to preview changes
 
-<details>
-  <summary>Click to view the screenshot</summary>
-  
- <img width="1288" alt="Screenshot 2023-08-18 at 1 11 44 AM" src="https://github.com/YiVal/YiVal/assets/1544154/4e9a182f-07ba-413e-9160-f38bfdc743ce">
+```Bash
+hugo server
+```
 
-</details>
+You will see logs like below
 
-For more details, check out the [Question Answering with expected result evaluator](https://github.com/YiVal/YiVal/blob/master/docs/qa_expected_results.md#demo).
+```
+Watching for changes in /Users/handsome/Github/yival_web/{archetypes,assets,content,i18n,layouts,package.json,postcss.config.js,static,tailwind.config.js}
+Watching for config changes in /Users/handsome/Github/yival_web/hugo.yaml
+Start building sites …
+hugo v0.118.2-da7983ac4b94d97d776d7c2405040de97e95c03d+extended darwin/arm64 BuildDate=2023-08-31T11:23:51Z VendorInfo=brew
 
-<!-- ### Fun Cast Fortune Telling
 
-Dive into the world of YiChing and discover your fortune on our index page.
-A fun and interactive way to get started with Yival.
+                   | EN
+-------------------+-----
+  Pages            | 27
+  Paginator pages  |  1
+  Non-page files   |  0
+  Static files     | 20
+  Processed images | 21
+  Aliases          | 10
+  Sitemaps         |  1
+  Cleaned          |  0
 
-![Screenshot 2023-08-16 at 10 50 57 PM](https://github.com/YiVal/YiVal/assets/1544154/b5c04295-7809-4331-8cce-cc4a1ceea73c) -->
+Built in 10157 ms
+Environment: "development"
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at //localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+```
+
+Visit the local host address in your web browser to preview the website.
+
+4. To make changes, you can create a new branch by running the following git command, and edit files
+
+```Bash
+git checkout -b branch-name
+```
+
+5. To edit home page content, or change some configs, edit hugo.yaml. For example, you can change the text and images of the index page by editing the respective paragraph content, or change the image link.
+6. To edit blog content, like adding new articles or editing existing articles, add or edit markdown files under content/posts.
+7. The content changes will be reflected immediately in the local environment, if you don't stop hugo server. If you think the content is OK, you can commit the changes, push to the remote, and create a pull request (PR).
+8. Once the changes are reviewed and approved, you can merge the PR into the main branch, and the CI job will automatically update the website in a few seconds to minutes. You can view the updated website at https://yival.io.
+
+Tada! That's all the steps you need to update the YiVal website! Congratulations and looking forward to your contributions!
